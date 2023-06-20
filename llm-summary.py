@@ -7,6 +7,20 @@ from langchain.prompts import PromptTemplate
 from langchain.docstore.document import Document
 from langchain.chains.summarize import load_summarize_chain
 
+
+def parse_result(text):
+
+    result = {}
+
+    result["summary"] = text.split("CONCISE SUMMARY:")[1].split("PARTIES INVOLVED:")[0]
+    result["parties"] = text.split("PARTIES INVOLVED:")[1].split("KEY FACTS:")[0]
+    result["facts"] = text.split("KEY FACTS:")[1].split("OUTCOME:")[0]
+    result["outcome"] = text.split("OUTCOME:")[1].split("LIST OF CATEGORIES:")[0]
+    result["categories"] = text.split("LIST OF CATEGORIES:")[1].replace(".", " ").split(", ")
+
+    return result
+
+
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("API_KEY")
 llm = OpenAI()
@@ -62,8 +76,11 @@ PROMPT.format(categories=categories, text=docs)
 chain = load_summarize_chain(llm, chain_type="stuff", prompt=PROMPT)
 chain({"input_documents": docs, "categories": categories}, return_only_outputs=False)
 
-# print(chain)
 
 result = chain.run(input_documents=docs, categories=categories)
 
 print(result)
+
+print("----------------------- DICTIONARY -----------------------")
+
+print(parse_result(result))
