@@ -1,6 +1,6 @@
 # Legaxonomy by Disco Inferno - SMU LIT Hackathon 2023
 
-## Problem Statement
+## Problem Statement - Generative AI in the legal research process
 Generative AI in the legal research process
 Organisations are faced with the dilemma of having powerful technologies available to them, such as GPT4, while also knowing that the technologies need to be harnessed in such a way that they are reliable in a professional services context.
 
