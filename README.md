@@ -21,7 +21,7 @@ Our application has two use cases:
 
 For our next steps, our solution can be put onto the market as a low-cost solution for lawyers to reduce their workload, as it is a cost-effective way for lawyers to reduce the amount of mundane work that they are required to do, allowing them to focus on their main job of closing cases rather than administrative tasks. We can further upgrade and finetune the accuracy of our model using input data from users whenever they edit the tags manually.
 
-Proceed to this link to have a feel as to how this solution would work from the user's point of view. [ADD LINK]
+[Proceed to this link to have a feel as to how this solution would work from the user's point of view.](https://www.figma.com/proto/RV4xSiJTk1kTPa8LAPzKe7/Lit-Hackathon-Figma?type=design&node-id=3921-7548&scaling=scale-down&page-id=3915%3A6998&starting-point-node-id=3921%3A7548&show-proto-sidebar=1)
 
 ## Architecture
 Here is a high-level view of how our solution would work. The code provided is how the part boxed in red would work.
@@ -30,7 +30,14 @@ Here is a high-level view of how our solution would work. The code provided is h
 
 ## Setting Up the Code
 1. Download a copy of this repo on your local machine.
-2. Inside current folder, do `pip install -r requirements.txt`.
+2. Open a terminal and create a virtual environment by running the following steps:
+    - `python3 -m venv litenv`
+    - For Windows: `litenv/bin/activate`
+    - For Mac: `source litenv/bin/activate`
+    - Notes:
+        - Please ensure that you are in the project folder before running the above commands.
+        - If you are using different versions of Python, the command may be `python` instead of `python3`, and the activate command may be `source litenv/Scripts/activate` instead of `source litenv/bin/activate`.
+2. Do `pip install -r requirements.txt`, or `python3 -m pip install -r requirements.txt`.
 3. Open up `ENVEXAMPLE` and add in your own Open AI secret key. [Here is guide on how to get your own](https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/).
 4. Rename the file to `.env`.
 
