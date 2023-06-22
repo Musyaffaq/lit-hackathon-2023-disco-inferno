@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 import os
 
+
 def read_pdf(file_path):
     try:
         with open(file_path, 'rb') as file:
@@ -20,7 +21,7 @@ def read_pdf(file_path):
 
 
 def append_to_db(output_string):
-    dbpath = Path('Database/Database.csv') 
+    dbpath = Path('Database/Database.csv')
     current_dataframe = pd.read_csv(dbpath)
     # Convert the output string to a dictionary
     print(output_string)
@@ -35,20 +36,19 @@ def append_to_db(output_string):
     }
 
     # Append the new row to the existing dataframe
-    new_dataframe = current_dataframe.append(new_row, ignore_index=True)
+    new_dataframe = pd.concat([current_dataframe, pd.DataFrame([new_row])], ignore_index=True)
 
-    new_dataframe.to_csv(dbpath) 
+    new_dataframe.to_csv(dbpath)
 
 
 def get_top_similar_cases(dataframe, query_item):
     # Create a new column to store the number of similar tags
     dataframe['similar_tags'] = dataframe['tags'].apply(lambda x: len(set(x) & set(query_item)))
-    
+
     # Sort the dataframe based on the number of similar tags in descending order
     sorted_dataframe = dataframe.sort_values(by='similar_tags', ascending=False)
-    
+
     # Get the top 3 case names with the most similar tags
     top_cases = sorted_dataframe['case_name'].head(3).tolist()
-    
-    return top_cases
 
+    return top_cases
