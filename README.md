@@ -9,7 +9,7 @@ Please demonstrate how can generative AI be harnessed and combined with a legal 
 ## Solution Idea
 Legal research has always been a labour-intensive process. Part of it requires them to read through legal texts, label them and then look through them again when retrieving the legal texts. This can hinder progress in cases that could be time-sensitive. Hence, our team has developed a solution to help improve the efficiency of this whole process.
 
-Harnessing the power of the OpenAI API (which powers ChatGPT), we propose creating a Case Management System where the summarisation and tagging of legal texts are automated. This will then allow the easy retrieval of those cases by a legal practitioner through the tags that have been generated, allowing for a more efficient legal research process. This solution taps on AI (i.e. Large Learning Models) through the use of the Open AI Api.
+Harnessing the power of the OpenAI API (which powers ChatGPT), we propose creating a Case Management System where the summarisation and tagging of legal texts are automated. This will then allow the easy retrieval of those cases by a legal practitioner through the tags that have been generated, allowing for a more efficient legal research process. This solution taps on AI (i.e. Large Learning Models) through the use of the Open AI API.
 
 Our application has two use cases:
 
