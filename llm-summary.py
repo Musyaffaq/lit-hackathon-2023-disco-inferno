@@ -31,6 +31,7 @@ def main():
     THEN, provide a list of the judges present.
     THEN, provide the court or tribunal the case was heard in.
     THEN, provide a list of categories that best describes the the case.
+    THEN, provide the outcome of the judgement alongside a list of damages/sentencing (e.g. amount fined, jail term, damages, etc.).
     
 
     FOLLOW THE EXAMPLE PROVIDED BELOW!
@@ -44,6 +45,7 @@ def main():
     "corem": "LIST OF JUDGES HERE",
     "court": "COURT OR TRIBUNAL HERE",
     "categories": "LIST OF CATEGORIES HERE"
+    "outcome": "OUTCOME OF JUDGEMENT AND DAMAGES/SENTENCING HERE"
 
     """
 
