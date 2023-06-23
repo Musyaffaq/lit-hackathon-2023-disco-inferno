@@ -29,10 +29,12 @@ def append_to_db(output_string):
 
     # Create a new dictionary to represent the new row
     new_row = {
+        'case_name': output_dict['case_name'],
         'case_summary': output_dict['case_summary'],
         'corem': [judge.strip() for judge in re.split(r',|and', output_dict['corem'])],
         'court': output_dict['court'],
-        'categories': [category.strip() for category in output_dict['categories'].split(',')]
+        'categories': [category.strip() for category in output_dict['categories'].split(',')],
+        'outcome': output_dict['outcome']
     }
 
     # Append the new row to the existing dataframe
